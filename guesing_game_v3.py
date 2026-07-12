@@ -16,5 +16,4 @@ while True:
     else:
         print("📉 Too low! Try again.")
 
-
 print("Thank you for playing")
