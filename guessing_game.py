@@ -18,17 +18,17 @@
 secret_number = 7
 
 while True:
-    guess = int(input("Give your guess: "))
+    guess = int(input("Enter your guess: "))
     if guess == secret_number:
-        print("Congratulations, your guess is right")
-
+        print("🎉 Congratulations! You guessed correctly!")
+        break
     elif guess > secret_number:
         print("Too high")
 
     else:
         print("Too low")
 
-    print("Thank you for playing")
+print("Thank you for playing")
 
 
 
