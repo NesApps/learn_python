@@ -23,10 +23,10 @@ while True:
         print("🎉 Congratulations! You guessed correctly!")
         break
     elif guess > secret_number:
-        print("Too high")
+        print("📈 Too high! Try again.")
 
     else:
-        print("Too low")
+        print("📉 Too low! Try again.")
 
 print("Thank you for playing")
 
