@@ -16,5 +16,5 @@ while True:
         else:
             print("📉 Too low! Try again.")
     except ValueError:
-        print("Please enter a valid number!")
+        print("❌ Invalid input. Please enter a whole number between 1 and 10")
 print("Thank you for playing")
