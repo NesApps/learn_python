@@ -11,9 +11,10 @@ def check_guess(guess, secret_number):
         print(f"🎉 Congratulations! You guessed correctly")
         return True
     elif guess > secret_number:
-        print(f"📈 Too high! Try again.")
+        print(f"📉 Too high! Try again.")
         return False
     else:
         print(f"📈 Too low! Try again.")
         return False
-attempts = 0
+
+def play_game():
