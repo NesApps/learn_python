@@ -1,5 +1,7 @@
 import random
 
+# from guessing_game_v4 import secret_number, attempts
+
 def get_secret_number():
     secret_number = random.randint(1, 10)
     return secret_number
@@ -16,5 +18,17 @@ def check_guess(guess, secret_number):
     else:
         print(f"📈 Too low! Try again.")
         return False
-
 def play_game():
+    secret_number = get_secret_number()
+    attempts = 0
+    while True:
+        guess = get_guess()
+        attempts +=1
+
+        if check_guess(guess, secret_number):
+            print(f"🏆 You won in {attempts} attempts!")
+            break
+    print("Thank you for playing the game")
+
+play_game()
+
