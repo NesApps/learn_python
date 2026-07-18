@@ -29,6 +29,5 @@ def play_game():
             print(f"🏆 You won in {attempts} attempts!")
             break
     print("Thank you for playing the game")
-
 play_game()
 
