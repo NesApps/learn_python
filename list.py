@@ -45,3 +45,8 @@
 # print(removed)
 
 ##############################
+# animals = ["Dog", "Cat", "Lion", "Tiger"]
+#
+# animals.pop(1)
+#
+# print(animals)
