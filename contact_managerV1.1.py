@@ -5,4 +5,6 @@ while True:
         break
     contacts.append(name)
     print(contacts)
-#Adding the view contacts
+#Adding the view contacts logic
+    for index, contact in enumerate(contacts):
+        print(index + 1, contact)
