@@ -8,13 +8,23 @@ contacts =["Nestor", "Sarah", "John"]
 # #Adding the view contacts logic
 # for index, contact in enumerate(contacts):
 #     print(f"{index + 1}. {contact}")
-search_name = input("Enter contact name: ")
-found = False
+# search_name = input("Enter contact name: ")
+# found = False
+#
+# for contact in contacts:
+#     if contact == search_name:
+#         print(f"{search_name} found!")
+#         found = True
+#         break
+# if not found:
+#     print(f"{search_name} not found!")
 
-for contact in contacts:
-    if contact == search_name:
-        print(f"{search_name} found!")
-        found = True
-        break
-if not found:
-    print(f"{search_name} not found!")
+delete_name = input("Enter contact to delete: ")
+
+if delete_name in contacts:
+    contacts.remove(delete_name)
+    print(f"{delete_name} successfully deleted")
+    print(contacts)
+
+else:
+    print(f"{delete_name} not found!")
