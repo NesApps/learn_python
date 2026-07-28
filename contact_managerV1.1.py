@@ -24,11 +24,38 @@ contacts =["Nestor", "Sarah", "John"]
 #     print(f"{search_name} not found!")
 
 #######DELETE CONTACT LOGIC########
-delete_name = input("Enter contact to delete: ")
-if delete_name in contacts:
-    contacts.remove(delete_name)
-    print(f"{delete_name} successfully deleted")
-    print(contacts)
+# delete_name = input("Enter contact to delete: ")
+# if delete_name in contacts:
+#     contacts.remove(delete_name)
+#     print(f"{delete_name} successfully deleted")
+#     print(contacts)
+#
+# else:
+#     print(f"{delete_name} not found!")
 
-else:
-    print(f"{delete_name} not found!")
+# while True:
+#     show_menu()
+#     choice = int(input("Choose an option: "))
+#
+#     if choice == "1":
+#         add_contact()
+#     elif choice == "2":
+#         view_contact()
+#     elif choice == "3":
+#         search_contact()
+#     elif choice == "4":
+#         delete_contact()
+#     elif choice == "5":
+#         print("Goodbye!")
+#         break
+#     else:
+#         print("Invalid option!")
+
+def show_menu():
+    print("=====CONTACT MANAGER=====")
+    print("1. Add Contact")
+    print("2. View Contacts")
+    print("3. Search Contact")
+    print("4. Delete Contact")
+    print("5. Exit")
+show_menu()
