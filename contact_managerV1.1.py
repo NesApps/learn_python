@@ -60,4 +60,7 @@ while True:
     else:
         print("Invalid option!")
 
-# show_menu()
+def add_contact():
+    name = input("Enter contact name: ")
+    contacts.append(name)
+    print(f"{name} was successfully added!")
