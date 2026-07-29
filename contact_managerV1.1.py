@@ -1,4 +1,4 @@
-contacts =["Nestor", "Sarah", "John"]
+
 
 ######ADD CONTACT LOGIC#####
 # while True:
@@ -33,7 +33,7 @@ contacts =["Nestor", "Sarah", "John"]
 # else:
 #     print(f"{delete_name} not found!")
 
-
+contacts =[]
 def show_menu():
     print("=====CONTACT MANAGER=====")
     print("1. Add Contact")
@@ -42,6 +42,17 @@ def show_menu():
     print("4. Delete Contact")
     print("5. Exit")
 
+def add_contact():
+    name = input("Enter contact name: ")
+    contacts.append(name)
+    print(f"{name} was successfully added!")
+
+def view_contacts():
+    if not contacts:
+        print("No contacts found!")
+    for index, contact in enumerate(contacts):
+        print(f"{index + 1}. {contact}")
+
 while True:
     show_menu()
     choice = int(input("Choose an option: "))
@@ -49,7 +60,7 @@ while True:
     if choice == 1:
         add_contact()
     elif choice == 2:
-        view_contact()
+        view_contacts()
     elif choice == 3:
         search_contact()
     elif choice == 4:
@@ -60,7 +71,4 @@ while True:
     else:
         print("Invalid option!")
 
-def add_contact():
-    name = input("Enter contact name: ")
-    contacts.append(name)
-    print(f"{name} was successfully added!")
+
