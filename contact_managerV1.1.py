@@ -15,6 +15,7 @@
 # found = False
 
 #######SEARCH CONTACT LOGIC########
+# search_name = input("Enter the name you want to search: ")
 # for contact in contacts:
 #     if contact == search_name:
 #         print(f"{search_name} found!")
@@ -50,8 +51,27 @@ def add_contact():
 def view_contacts():
     if not contacts:
         print("No contacts found!")
-    for index, contact in enumerate(contacts):
-        print(f"{index + 1}. {contact}")
+    else:
+        for index, contact in enumerate(contacts):
+            print(f"{index + 1}. {contact}")
+
+def search_contact():
+    search_name = input("Enter the name you want to search: ")
+    found = False
+    for contact in contacts:
+        if contact == search_name:
+            print(f"{search_name} found!")
+            found = True
+            break
+    if not found:
+        print(f"{search_name} not found!")
+
+def delete_contact():
+    delete_name = input("Enter contact to delete: ")
+    if delete_name in contacts:
+        contacts.remove(delete_name)
+        print(f"{delete_name} successfully deleted")
+        print(contacts)
 
 while True:
     show_menu()
