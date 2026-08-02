@@ -1,20 +1,6 @@
-
-
-
-
-#######DELETE CONTACT LOGIC########
-# delete_name = input("Enter contact to delete: ")
-# if delete_name in contacts:
-#     contacts.remove(delete_name)
-#     print(f"{delete_name} successfully deleted")
-#     print(contacts)
-#
-# else:
-#     print(f"{delete_name} not found!")
-
 contacts =[]
 def show_menu():
-    print("=====CONTACT MANAGER=====")
+    print("\n=====CONTACT MANAGER=====")
     print("1. Add Contact")
     print("2. View Contacts")
     print("3. Search Contact")
@@ -30,6 +16,7 @@ def view_contacts():
     if not contacts:
         print("No contacts found!")
     else:
+        print("\nYour Contacts:")
         for index, contact in enumerate(contacts):
             print(f"{index + 1}. {contact}")
 
