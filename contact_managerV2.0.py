@@ -40,8 +40,12 @@ def edit_contact():
     for index, contact in enumerate(contacts):
         if contact == edit_name:
             new_name = input("Enter new name: ")
-            contacts[index] = new_name
-            print(f"{edit_name} updated to {new_name}")
+            # prevent changing to an already-existing contact
+            if new_name in contacts and new_name != edit_name:
+                print("Name already exists")
+            else:
+                contacts[index] = new_name
+                print(f"{edit_name} updated to {new_name}")
             found = True
             break
     if not found:
