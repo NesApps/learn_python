@@ -34,6 +34,19 @@ def search_contact():
     if not found:
         print(f"{search_name} not found!")
 
+def edit_contact():
+    edit_name = input("Enter contact to edit: ")
+    found = False
+    for index, contact in enumerate(contacts):
+        if contact == edit_name:
+            new_name = input("Enter new name: ")
+            contacts[index] = new_name
+            print(f"{edit_name} updated to {new_name}")
+            found = True
+            break
+    if not found:
+        print("Not found!")
+
 def delete_contact():
     delete_name = input("Enter contact to delete: ")
     if delete_name in contacts:
@@ -56,9 +69,10 @@ while True:
     elif choice == 4:
         delete_contact()
     elif choice == 5:
+        edit_contact()
+    elif choice == 6:
         print("Goodbye!")
         break
     else:
         print("Invalid option!")
-
 
