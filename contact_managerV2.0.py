@@ -6,7 +6,8 @@ def show_menu():
     print("3. Search Contact")
     print("4. Delete Contact")
     print("5. Edit Contact")
-    print("6. Exit")
+    print("6. Save Contact")
+    print("7. Exit")
 
 def add_contact():
     name = input("Enter contact name: ")
@@ -52,6 +53,12 @@ def edit_contact():
     if not found:
         print("Not found!")
 
+def save_contacts():
+    with open("contacts.txt", "w") as file:
+        for contact in contacts:
+            file.write(contact + "\n")
+
+
 def delete_contact():
     delete_name = input("Enter contact to delete: ")
     if delete_name in contacts:
@@ -76,6 +83,8 @@ while True:
     elif choice == 5:
         edit_contact()
     elif choice == 6:
+        save_contacts()
+    elif choice == 7:
         print("Goodbye!")
         break
     else:
