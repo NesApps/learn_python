@@ -62,7 +62,7 @@ def save_contacts():
 def load_contacts():
     with open("contacts.txt", "r") as file:
         for line in file:
-            file.read(contacts + "\n")
+            contacts.append(line.strip())
 
 def delete_contact():
     delete_name = input("Enter contact to delete: ")
