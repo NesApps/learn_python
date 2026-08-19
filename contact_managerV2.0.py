@@ -1,4 +1,4 @@
-2
+
 contacts =[]
 def show_menu():
     print("\n=====CONTACT MANAGER=====")
@@ -7,9 +7,7 @@ def show_menu():
     print("3. Search Contact")
     print("4. Delete Contact")
     print("5. Edit Contact")
-    print("6. Save Contact")
-    print("7. Load Contacts")
-    print("8. Exit")
+    print("6. Exit")
 
 def add_contact():
     name = input("Enter contact name: ")
@@ -92,10 +90,6 @@ while True:
     elif choice == 5:
         edit_contact()
     elif choice == 6:
-        save_contacts()
-    elif choice == 7:
-        load_contacts()
-    elif choice == 8:
         print("Goodbye!")
         break
     else:
