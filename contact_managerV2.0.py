@@ -1,3 +1,4 @@
+2
 contacts =[]
 def show_menu():
     print("\n=====CONTACT MANAGER=====")
@@ -16,6 +17,7 @@ def add_contact():
         print(f"{name} already exists!")
     else:
         contacts.append(name)
+        save_contacts()
         print(f"{name} was successfully added!")
 
 def view_contacts():
@@ -48,6 +50,7 @@ def edit_contact():
                 print("Name already exists")
             else:
                 contacts[index] = new_name
+                save_contacts()
                 print(f"{edit_name} updated to {new_name}")
             found = True
             break
@@ -68,6 +71,7 @@ def delete_contact():
     delete_name = input("Enter contact to delete: ")
     if delete_name in contacts:
         contacts.remove(delete_name)
+        save_contacts()
         print(f"{delete_name} successfully deleted")
         print(contacts)
     else:
