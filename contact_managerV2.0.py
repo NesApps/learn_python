@@ -47,9 +47,14 @@ def edit_contact():
             if new_name in contacts and new_name != edit_name:
                 print("Name already exists")
             else:
-                contacts[index] = new_name
-                save_contacts()
-                print(f"{edit_name} updated to {new_name}")
+                confirm = input(f"Are you sure you want to change {edit_name} to {new_name}? (y/n): ")
+                if confirm == "y":
+                    contacts[index] = new_name
+                    save_contacts()
+                    print(f"{edit_name} updated to {new_name}")
+                else:
+                    print("Edit cancelled")
+
             found = True
             break
     if not found:
