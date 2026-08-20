@@ -67,10 +67,16 @@ def load_contacts():
 
 def delete_contact():
     delete_name = input("Enter contact to delete: ")
+
     if delete_name in contacts:
-        contacts.remove(delete_name)
-        save_contacts()
-        print(f"{delete_name} successfully deleted")
+        confirm = input(f"Are you sure you want to delete {delete_name}? (y/n): ")
+
+        if confirm == "y":
+            contacts.remove(delete_name)
+            save_contacts()
+            print(f"{delete_name} successfully deleted")
+        else:
+            print("Deletion cancelled")
     else:
         print(f"{delete_name} not found!")
 try:
