@@ -71,14 +71,19 @@ def delete_contact():
         contacts.remove(delete_name)
         save_contacts()
         print(f"{delete_name} successfully deleted")
-        print(contacts)
     else:
         print(f"{delete_name} not found!")
-
+try:
+    load_contacts()
+except FileNotFoundError:
+    contacts = []
 while True:
     show_menu()
-    choice = int(input("Choose an option: "))
-
+    try:
+        choice = int(input("Choose an option: "))
+    except ValueError:
+        print("Please enter a valid number from 1 to 6")
+        continue
     if choice == 1:
         add_contact()
     elif choice == 2:
