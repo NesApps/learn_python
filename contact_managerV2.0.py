@@ -10,8 +10,8 @@ def show_menu():
     print("6. Exit")
 
 def add_contact():
-    name = input("Enter contact name: ")
-    if name in contacts:
+    name = input("Enter contact name: ").strip().title()
+    if name.lower() in [contact.lower() for contact in contacts]:
         print(f"{name} already exists!")
     else:
         contacts.append(name)
@@ -41,10 +41,10 @@ def edit_contact():
     edit_name = input("Enter contact to edit: ").strip().lower()
     found = False
     for index, contact in enumerate(contacts):
-        if contact == edit_name:
-            new_name = input("Enter new name: ").strip().lower()
+        if contact.lower() == edit_name:
+            new_name = input("Enter new name: ").strip().title()
             # prevent changing to an already-existing contact
-            if new_name in contacts and new_name != edit_name:
+            if new_name.lower() in [contact.lower() for contact in contacts] and new_name.lower() != edit_name:
                 print("Name already exists")
             else:
                 confirm = input(f"Are you sure you want to change {edit_name} to {new_name}? (y/n): ")
