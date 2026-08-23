@@ -27,10 +27,10 @@ def view_contacts():
             print(f"{index + 1}. {contact}")
 
 def search_contact():
-    search_name = input("Enter the name you want to search: ")
+    search_name = input("Enter the name you want to search: ").strip()
     found = False
     for contact in contacts:
-        if contact == search_name:
+        if contact.lower() == search_name.lower():
             print(f"{search_name} found!")
             found = True
             break
@@ -38,11 +38,11 @@ def search_contact():
         print(f"{search_name} not found!")
 
 def edit_contact():
-    edit_name = input("Enter contact to edit: ").strip().title()
+    edit_name = input("Enter contact to edit: ").strip().lower()
     found = False
     for index, contact in enumerate(contacts):
         if contact == edit_name:
-            new_name = input("Enter new name: ").strip().title()
+            new_name = input("Enter new name: ").strip().lower()
             # prevent changing to an already-existing contact
             if new_name in contacts and new_name != edit_name:
                 print("Name already exists")
