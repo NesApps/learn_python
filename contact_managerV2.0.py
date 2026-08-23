@@ -38,11 +38,11 @@ def search_contact():
         print(f"{search_name} not found!")
 
 def edit_contact():
-    edit_name = input("Enter contact to edit: ")
+    edit_name = input("Enter contact to edit: ").strip().title()
     found = False
     for index, contact in enumerate(contacts):
         if contact == edit_name:
-            new_name = input("Enter new name: ")
+            new_name = input("Enter new name: ").strip().title()
             # prevent changing to an already-existing contact
             if new_name in contacts and new_name != edit_name:
                 print("Name already exists")
@@ -71,7 +71,7 @@ def load_contacts():
             contacts.append(line.strip())
 
 def delete_contact():
-    delete_name = input("Enter contact to delete: ")
+    delete_name = input("Enter contact to delete: ").strip().title()
 
     if delete_name in contacts:
         confirm = input(f"Are you sure you want to delete {delete_name}? (y/n): ")
