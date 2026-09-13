@@ -47,11 +47,11 @@ def edit_contact():
             if new_name.lower() in [contact.lower() for contact in contacts] and new_name.lower() != edit_name:
                 print("Name already exists")
             else:
-                confirm = input(f"Are you sure you want to change {edit_name} to {new_name}? (y/n): ")
+                confirm = input(f"Are you sure you want to change {contact} to {new_name}? (y/n): ")
                 if confirm == "y":
                     contacts[index] = new_name
                     save_contacts()
-                    print(f"{edit_name} updated to {new_name}")
+                    print(f"{contact} updated to {new_name}")
                 else:
                     print("Edit cancelled")
 
@@ -71,19 +71,25 @@ def load_contacts():
             contacts.append(line.strip())
 
 def delete_contact():
-    delete_name = input("Enter contact to delete: ").strip().title()
+    delete_name = input("Enter contact to delete: ").strip()
 
-    if delete_name in contacts:
-        confirm = input(f"Are you sure you want to delete {delete_name}? (y/n): ")
+    found = False
 
-        if confirm == "y":
-            contacts.remove(delete_name)
-            save_contacts()
-            print(f"{delete_name} successfully deleted")
-        else:
-            print("Deletion cancelled")
-    else:
+    for index, contact in enumerate(contacts):
+        if contact.lower() == delete_name.lower():
+            confirm = input(f"Are you sure you want to delete {contact}? (y/n): ").strip().lower()
+
+            if confirm == "y":
+                contacts.pop(index)
+                save_contacts()
+                print(f"{contact} successfully deleted")
+            else:
+                print("Deletion cancelled")
+            found = True
+            break
+    if not found:
         print(f"{delete_name} not found!")
+
 try:
     load_contacts()
 except FileNotFoundError:
