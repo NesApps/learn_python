@@ -79,6 +79,10 @@ def delete_contact():
         if contact.lower() == delete_name.lower():
             confirm = input(f"Are you sure you want to delete {contact}? (y/n): ").strip().lower()
 
+            while confirm not in ["y", "n"]:
+                print("Please enter y or n.")
+                confirm = input(f"Are you sure you want to delete {contact}? (y/n): ").strip().lower()
+
             if confirm == "y":
                 contacts.pop(index)
                 save_contacts()
